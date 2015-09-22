@@ -28,8 +28,9 @@ public class EventListener implements Listener
 			//if (command.equalsIgnoreCase("//copy")) {
 			if(command.contains("//") || command.contains("/tool")) {
 				event.setCancelled(true);
-				player.sendMessage("No permission");
-				return;
+				player.sendMessage("Please use /we <command name> instead of //command."); 
+				player.sendMessage("Exemple: //copy   --->   /we copy");
+					return;
 			}
 		}
 	}

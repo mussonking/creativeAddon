@@ -8,7 +8,5 @@ commands:
         description: rankup playerName to rankup between free builder ranks
     mode:
         description: Let users change there gamemode between creative and survival
-    /:
+    we:
         description: WorldEdit bypass to set timer
-    tool:
-        description: Bypass WorldEdit tool command

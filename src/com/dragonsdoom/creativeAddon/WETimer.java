@@ -56,27 +56,25 @@ public class WETimer implements CommandExecutor{
 	 public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){	
 		Player player = (Player) sender;
 		if(sender instanceof Player){   
-			if(cmd.getName().equalsIgnoreCase("tool") || cmd.getName().contains("/")){
-
+			if(cmd.getName().equalsIgnoreCase("we")){
 		    	String myString = "";
 			    for(int i = 0; i < args.length; i++){
 			    	String arg = args[i] + " ";
 			        myString = myString + arg;
 			    }
-			    
 			if(player.hasPermission("we.permission")) {    
 				List<String> dcstring = Main.plugin.getConfig().getStringList("WorldEdit.denied-Commands");
 				if(!dcstring.contains(args[0])) {
 					if(tryCooldown(player, "we", 0)) {
 		//run the command		
-						if(cmd.getName().equalsIgnoreCase("tool")) {
-							Main.plugin.getServer().dispatchCommand(player, cmd + myString);
+						if(args[0].equalsIgnoreCase("tool")) {
+							Main.plugin.getServer().dispatchCommand(player, myString);
 						}
-						if(cmd.getName().contains("/") && args.length > 0 ) {
-							Main.plugin.getServer().dispatchCommand(player, cmd + myString);
+						if(!args[0].equalsIgnoreCase("tool") && args.length > 0) {
+							Main.plugin.getServer().dispatchCommand(player, "/" + myString);
 						}
-						if(cmd.getName().contains("/") && args.length == 0 ) {
-							Main.plugin.getServer().dispatchCommand(player, cmd.toString());
+						if(args.length == 0) {
+							Main.plugin.getServer().dispatchCommand(player, "/superpickaxe");
 						}
 						
 						if(player.hasPermission(Main.plugin.getConfig().getString("WorldEdit.timer.donator.noCooldown.perm"))) {
