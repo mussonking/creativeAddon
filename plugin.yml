@@ -1,0 +1,12 @@
+name: creativeAddon
+main: com.dragonsdoom.creativeAddon.Main
+version: 1.0
+softdepend: [Vault]
+author: mussonking
+commands:
+    rankup:
+        description: rankup playerName to rankup between free builder ranks
+    mode:
+        description: Let users change there gamemode between creative and survival
+    we:
+        description: WorldEdit bypass to set timer
